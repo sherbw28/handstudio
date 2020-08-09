@@ -1,0 +1,23 @@
+<h1>メッセージ一覧</h1>
+
+<% if @lyrics.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lyrics.each do |lyric| %>
+        <tr>
+          <td><%= link_to lyric.title, lyric %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @lyrics %>
+  </div>
+<% end %>
+
+<%= link_to '新規リリックの投稿', new_lyric_path, class: "btn btn-primary" %>
