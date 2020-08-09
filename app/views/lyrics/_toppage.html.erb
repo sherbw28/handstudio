@@ -1,0 +1,20 @@
+<% if lyrics.any? %>
+  <h1>過去の投稿</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% lyrics.each do |lyric| %>
+        <tr>
+          <td><%= link_to lyric.title, lyric %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate lyrics %>
+  </div>
+<% end %>
