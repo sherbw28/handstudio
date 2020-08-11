@@ -21,7 +21,7 @@ a {
 }
 
 nav img {
-  width: 150px;
+  width: 170px;
 }
 
 
@@ -45,7 +45,6 @@ nav img {
 
 .card > img {
   width: 100%;
-  margin: 0 auto;
 }
 
 .card-group {
@@ -68,4 +67,15 @@ nav img {
 .work {
   border: solid 1px black;
   margin-bottom: 10px;
+}
+
+/*kaminari*/
+.pagination>li>a {             /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: rgba(0,0,0,.30);
+    border-color: rgba(0,0,0,.30);
 }
