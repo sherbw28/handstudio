@@ -3,6 +3,10 @@ body {
   background-color: #ECF0F3;
 } 
 
+a {
+  color: rgba(0,0,0,.75);
+}
+
 /*Header*/
 .dropdown-menu {
   background-color: #ECF0F3;
@@ -17,7 +21,7 @@ body {
 }
 
 nav img {
-  width: 192px;
+  width: 150px;
 }
 
 
@@ -26,7 +30,6 @@ nav img {
 .anime_test {
     display:  block;              
     margin: 0 auto;                
-    width: 300px;
 }
 
 .card {
@@ -40,12 +43,6 @@ nav img {
   font-size: 35px;
 }
 
-.card > h2 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 100px;
-}
-
 .card > img {
   width: 100%;
   margin: 0 auto;
@@ -56,8 +53,19 @@ nav img {
 }
 
 .concept > p {
-  margin: 0 auto;
   text-align: center;
   font-size: 15px;
   line-height: 25px;
+}
+
+/*lyric-show*/
+.madeby {
+  margin-right: 0;
+  display: block;
+}
+
+/*lyric-index*/
+.work {
+  border: solid 1px black;
+  margin-bottom: 10px;
 }

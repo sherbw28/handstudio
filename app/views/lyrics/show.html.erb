@@ -1,28 +1,24 @@
-<h1>id: <%= @lyric.id %> のメッセージ詳細ページ</h1>
+<div class="container text-center">
+  <h2 class="text-right madeby h4">製作者<span><%= link_to @lyric.user.name, user_path(@lyric.user), class: "ml-3" %></span></h2>
+  <h1 class="mb-3">Title</h1>
+  <h2 class="mb-5"><%= @lyric.title %></h2>
+  <div class="dropdown-divider"></div>
+  <h1 class="mb-3">Lyric</h1>
+  <p class="mb-5 h6"><%= raw(nl2br(@lyric.content)) %></p>
+  <div class="dropdown-divider"></div>
+  <h1 class="mb-3">Meaning</h1>
+  <p class="mb-5 h6"><%= raw(nl2br(@lyric.meaning)) %></p>
+  <div class="dropdown-divider"></div>
 
-<table class="table table-bordered">
-  <tr>
-    <th>タイトル</th>
-    <td><%= @lyric.title %></td>
-  </tr>
-  <tr>
-    <th>歌詞</th>
-    <td><%= @lyric.content %></td>
-  </tr>
-  <tr>
-    <th>メッセージ</th>
-    <td><%= @lyric.meaning %></td>
-  </tr>
-  <tr>
-    <th>製作者</th>
-    <td><%= @lyric.user.name %></td>
-  </tr>
-</table>
 
 <% if current_user == @lyric.user %>
-  <%= link_to 'このメッセージを編集する', edit_lyric_path(@lyric), class: 'btn btn-light' %>
-  <%= link_to 'このメッセージを削除する', @lyric, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
-  <%= link_to '戻る', lyrics_path, class: "btn btn-primary" %>
+ <div class="text-right">
+  <%= link_to '編集', edit_lyric_path(@lyric), class: 'btn btn-outline-dark' %>
+  <%= link_to '削除', @lyric, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-outline-danger' %>
+  <%= link_to '戻る', lyrics_path, class: "btn btn-outline-info" %>
+ </div>
 <% else %>
-  <%= link_to '戻る', lyrics_path, class: "btn btn-primary" %>
+  <div class="text-right">
+    <%= link_to '戻る', lyrics_path, class: "btn btn-outline-info" %>
+  </div>
 <% end %>

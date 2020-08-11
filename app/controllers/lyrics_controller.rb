@@ -4,7 +4,7 @@ class LyricsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   
   def index
-    @lyrics = Lyric.order(id: :desc).page(params[:page]).per(3)
+    @lyrics = Lyric.order(id: :desc).page(params[:page]).per(10)
   end
 
   def show
@@ -19,7 +19,7 @@ class LyricsController < ApplicationController
     @lyric = current_user.lyrics.build(lyric_params)
     
     if @lyric.save
-      flash[:success] = "投稿を完了しました"
+      flash[:info] = "投稿を完了しました"
       redirect_to @lyric
     else
       flash.now[:danger] = "投稿に失敗しました"
@@ -33,7 +33,7 @@ class LyricsController < ApplicationController
   def update
     
     if @lyric.update(lyric_params)
-      flash[:success] = "編集しました"
+      flash[:info] = "編集しました"
       redirect_to @lyric
     else
       flash[:danger] = "編集に失敗しました"
@@ -44,7 +44,7 @@ class LyricsController < ApplicationController
   def destroy
     @lyric.destroy
     
-    flash[:success] = "リリックを削除しました"
+    flash[:info] = "リリックを削除しました"
     redirect_to root_path
   end
   

@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-sm-4">
+  <aside class="col-sm-4 mb-5">
     <div class="card">
       <div class="card-header">
          <h3 class="card-title"><%= @user.name %></h3>
@@ -11,7 +11,7 @@
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs mb-3 nav-justified">
-      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿  <span class="badge badge-info"><%= @count_lyrics %></span></a></li>
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>"><%= @user.name %>の作品  <span class="badge badge-info"><%= @count_lyrics %></span></a></li>
     </ul>
     <%= render "lyrics/toppage", lyrics: @lyrics %>
   </div>
