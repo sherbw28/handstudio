@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'lyrics#index'
+  root to: 'toppages#index'
   
   resources :lyrics
   

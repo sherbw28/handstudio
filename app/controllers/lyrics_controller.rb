@@ -1,5 +1,5 @@
 class LyricsController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, except: [:index, :show]
   before_action :set_lyric, only: [:edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   

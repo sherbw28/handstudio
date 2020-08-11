@@ -13,7 +13,16 @@
     <th>メッセージ</th>
     <td><%= @lyric.meaning %></td>
   </tr>
+  <tr>
+    <th>製作者</th>
+    <td><%= @lyric.user.name %></td>
+  </tr>
 </table>
 
-<%= link_to 'このメッセージを編集する', edit_lyric_path(@lyric), class: 'btn btn-light' %>
-<%= link_to 'このメッセージを削除する', @lyric, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<% if current_user == @lyric.user %>
+  <%= link_to 'このメッセージを編集する', edit_lyric_path(@lyric), class: 'btn btn-light' %>
+  <%= link_to 'このメッセージを削除する', @lyric, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+  <%= link_to '戻る', lyrics_path, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to '戻る', lyrics_path, class: "btn btn-primary" %>
+<% end %>

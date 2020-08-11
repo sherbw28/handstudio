@@ -6,7 +6,10 @@
     <title>Musith</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag('favicon.png') %>
+    
+    	
+　　<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -18,8 +21,7 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
-    
+    <%= render 'layouts/navbar_toppage' %>
     <div class="container">
       <%= render 'layouts/flash_messages' %>
 

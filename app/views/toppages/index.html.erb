@@ -1,0 +1,73 @@
+<% if logged_in? %>
+  <div class="mainheader mb-5">
+    <img src="/assets/idea5.jpg" class="anime_test">
+  </div>
+  <div class="container">
+    <h1 class="lyst mb-3">LYST</h1>
+    <div class="card-group">
+      <div class="card mr-3">
+        <img class="img-fluid" src="/assets/lyrics1.jpg">
+        <%= link_to "CHECK!", lyrics_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+        <%= link_to "MAKE!", new_lyric_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+      </div>
+      <div class="card mr-3">
+        <img class="img-fluid" src="/assets/codes.jpg">
+        <%= link_to "CHECK!", root_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+        <%= link_to "MAKE!", root_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+      </div>
+      <div class="card">
+        <img class="img-fluid" src="/assets/melodies.jpg">
+        <%= link_to "CHECK!", root_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+        <%= link_to "MAKE!", root_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="concept offset-md-3 col-md-6">
+        <h1 class="lyst mb-3">CONCEPT</h1>
+        <p class="mb-5">歌は1人で作り上げなければならないでしょうか？<br>
+          ふといい歌詞を思いついた。良いコードを思いつきで引けた、良いメロディーが何となんとなく思いついた。そんなこと今までになかったでしょうか。しかし、もしそのようなことがあったとしてもそれ以上の発展があったでしょうか？おそらくほとんどのそのようなアイデアは書き記していたとしてもいずれ忘れてなくなり、もしくはメモもとらなかったのでいつの間にか忘れてしまったということになっているでしょう。<br>
+          でももしそのような時にそれを簡単に投稿できるサイトがあったら？そしてその投稿した作品に、さらに誰かが上乗せで歌詞を書いたりメロディーをつけたりできたら？<br>
+          このサイトはそのようなみなさんの素晴らしいアイデアを殺したくない。という思いで開設しました。何も歌を作る時に1人で全ての分野を担当しなくてもいいんです。みなさんで１つの作品を作り上げていきましょう。<br>
+        <span class="font-weight-bold m-5">Music with you</span><br>
+        <span class="h5 font-weight-bold">アイデアを形に</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center"><small>&copy; Eisuke Sato</small></footer>
+<% else %>
+  <div class="mainheader mb-5">
+    <img src="/assets/idea5.jpg" class="anime_test">
+  </div>
+  <div class="container">
+    <h1 class="lyst mb-3">LYST</h1>
+    <div class="card-group">
+      <div class="card mr-3">
+        <img class="img-fluid" src="/assets/lyrics1.jpg">
+        <%= link_to "CHECK!", lyrics_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+      </div>
+      <div class="card mr-3">
+        <img class="img-fluid" src="/assets/codes.jpg">
+        <%= link_to "CHECK!", root_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+      </div>
+      <div class="card">
+        <img class="img-fluid" src="/assets/melodies.jpg">
+        <%= link_to "CHECK!", root_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="concept offset-md-3 col-md-6">
+        <h1 class="lyst mb-3">CONCEPT</h1>
+        <p class="mb-5">歌は1人で作り上げなければならないでしょうか？<br>
+          ふといい歌詞を思いついた。良いコードを思いつきで引けた、良いメロディーが何となんとなく思いついた。そんなこと今までになかったでしょうか。しかし、もしそのようなことがあったとしてもそれ以上の発展があったでしょうか？おそらくほとんどのそのようなアイデアは書き記していたとしてもいずれ忘れてなくなり、もしくはメモもとらなかったのでいつの間にか忘れてしまったということになっているでしょう。<br>
+          でももしそのような時にそれを簡単に投稿できるサイトがあったら？そしてその投稿した作品に、さらに誰かが上乗せで歌詞を書いたりメロディーをつけたりできたら？<br>
+          このサイトはそのようなみなさんの素晴らしいアイデアを殺したくない。という思いで開設しました。何も歌を作る時に1人で全ての分野を担当しなくてもいいんです。みなさんで１つの作品を作り上げていきましょう。<br>
+        <span class="font-weight-bold m-5">Music with you</span><br>
+        <span class="h5 font-weight-bold">アイデアを形に</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center"><small>&copy; Eisuke Sato</small></footer>
+<% end %>

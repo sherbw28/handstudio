@@ -1,34 +1,46 @@
-<h1>メッセージ一覧</h1>
+<h1>リリック一覧</h1>
 
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
 
-<% if @lyrics.any? %>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>タイトル</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @lyrics.each do |lyric| %>
+  <% if @lyrics.any? %>
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td><%= link_to lyric.title, lyric %></td>
+          <th>タイトル</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <div>
-    <%= paginate @lyrics %>
-  </div>
-<% end %>
+      </thead>
+      <tbody>
+        <% @lyrics.each do |lyric| %>
+          <tr>
+            <td><%= link_to lyric.title, lyric %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div>
+      <%= paginate @lyrics %>
+    </div>
+  <% end %>
 
 <%= link_to '新規リリックの投稿', new_lyric_path, class: "btn btn-primary" %>
 <% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to the Musith!</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+  <% if @lyrics.any? %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>タイトル</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @lyrics.each do |lyric| %>
+          <tr>
+            <td><%= link_to lyric.title, lyric %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div>
+      <%= paginate @lyrics %>
     </div>
-  </div>
+  <% end %>
 <% end %>

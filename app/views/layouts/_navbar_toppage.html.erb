@@ -1,0 +1,53 @@
+<header class="mb-1 mt-4">
+  <nav class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand ml-4" href="/"><img src="/assets/musith1.png"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Make!</a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li class="dropdown-item"><%= link_to 'Lyric', new_lyric_path %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item "><%= link_to 'Code', root_path %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item "><%= link_to 'Melody', root_path %></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Check!</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item "><%= link_to 'Lyric', lyrics_path %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item "><%= link_to 'Code', root_path %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item "><%= link_to 'Melody', root_path %></li>
+            </ul>
+          </li>
+          <li class="nav-item"><%= link_to 'Your Profile', user_path(current_user), class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %></li>
+        <% else %>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Check!</a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li class="dropdown-item "><%= link_to 'Lyric', lyrics_path %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item "><%= link_to 'Code', root_path %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item "><%= link_to 'Melody', root_path %></li>
+            </ul>
+          </li>
+          <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
