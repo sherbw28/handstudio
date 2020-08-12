@@ -1,22 +1,22 @@
 <% if logged_in? %>
   <div class="mainheader mb-5">
-    <img src="/assets/idea5.jpg" class="anime_test">
+    <%= image_tag asset_path("idea.jpg"), class: "thought" %>
   </div>
   <div class="container">
     <h1 class="lyst mb-3">LYST</h1>
     <div class="card-group">
       <div class="card mr-3">
-        <img class="img-fluid" src="/assets/lyrics1.jpg">
+        <%= image_tag asset_path("lyrics.jpg"), class: "img-fluid" %>
         <%= link_to "CHECK!", lyrics_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
         <%= link_to "MAKE!", new_lyric_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
       </div>
       <div class="card mr-3">
-        <img class="img-fluid" src="/assets/codes.jpg">
+        <%= image_tag asset_path("codes.jpg"), class: "img-fluid" %>
         <%= link_to "CHECK!", develops_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
         <%= link_to "MAKE!", develops_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
       </div>
       <div class="card">
-        <img class="img-fluid" src="/assets/melodies.jpg">
+        <%= image_tag asset_path("melodies.jpg"), class: "img-fluid" %>
         <%= link_to "CHECK!", develops_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
         <%= link_to "MAKE!", develops_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
       </div>
@@ -43,15 +43,15 @@
     <h1 class="lyst mb-3">LYST</h1>
     <div class="card-group">
       <div class="card mr-3">
-        <img class="img-fluid" src="/assets/lyrics1.jpg">
+        <%= image_tag asset_path("lyrics.jpg"), class: "img-fluid" %>
         <%= link_to "CHECK!", lyrics_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
       </div>
       <div class="card mr-3">
-        <img class="img-fluid" src="/assets/codes.jpg">
+        <%= image_tag asset_path("codes.jpg"), class: "img-fluid" %>
         <%= link_to "CHECK!", root_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
       </div>
       <div class="card">
-        <img class="img-fluid" src="/assets/melodies.jpg">
+        <%= image_tag asset_path("melodies.jpg"), class: "img-fluid" %>
         <%= link_to "CHECK!", root_path, class: "btn btn-outline-info ml-5 mr-5 mb-3" %>
       </div>
     </div>
