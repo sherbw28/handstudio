@@ -1,0 +1,19 @@
+<% if comments.any? %>
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th class="h3">Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% comments.each do |comment| %>
+        <tr>
+          <td><%= link_to lyric.title, lyric %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate comments %>
+  </div>
+<% end %>

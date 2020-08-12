@@ -42,6 +42,9 @@
         <% end %>
       </tbody>
     </table>
+    <div>
+      <%= paginate @comments %>
+    </div>
   <% end %>
 
 <% if current_user == @lyric.user %>

@@ -9,7 +9,7 @@ class LyricsController < ApplicationController
 
   def show
     @lyric = Lyric.find(params[:id])
-    @comments = @lyric.comments
+    @comments = @lyric.comments.order(id: :desc).page(params[:page]).per(10)
     if logged_in?
       @comment = current_user.comments.new 
     end

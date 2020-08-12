@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @comments = @user.comments.order(id: :desc).page(params[:page]).per(5)
     @lyrics = @user.lyrics.order(id: :desc).page(params[:page]).per(5)
     counts(@user)
   end
