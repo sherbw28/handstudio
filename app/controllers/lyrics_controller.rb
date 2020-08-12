@@ -9,6 +9,10 @@ class LyricsController < ApplicationController
 
   def show
     @lyric = Lyric.find(params[:id])
+    @comments = @lyric.comments
+    if logged_in?
+      @comment = current_user.comments.new 
+    end
   end
 
   def new

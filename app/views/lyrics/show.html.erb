@@ -9,13 +9,46 @@
   <h1 class="mb-3">Meaning</h1>
   <p class="mb-5 h6"><%= raw(nl2br(@lyric.meaning)) %></p>
   <div class="dropdown-divider"></div>
-
+  
+  <% if logged_in? %>
+    <div class="row mb-3">
+      <div class="col-12 mt-5">
+        <%= form_with(model:[@lyric, @comment], method: :post, local: true) do |f| %>
+        <%= f.hidden_field :lyric_id, value: @lyric.id %>
+          <div class="form-group">
+            <%= f.text_area :post, class: 'form-control ', placeholder: "コメントを投稿する"  %>
+          </div>
+          <div class="text-center">
+            <%= f.submit '投稿', class: 'btn btn-outline-info btn-lg' %>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+</div>
+ <h3 class="text-center">Comments</h3>
+  <% if @comments.any? %>
+    <table class="table table-striped text-center">
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <td>id:&nbsp;&nbsp;&nbsp;<%= comment.id %></td>
+            <td><%= raw(nl2br(comment.post)) %></td>
+            <td>
+              <% if current_user == comment.user %>
+                <%=link_to "削除", lyric_comment_path(comment.lyric.id, comment.id), method: :delete %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 
 <% if current_user == @lyric.user %>
  <div class="text-right">
-  <%= link_to '編集', edit_lyric_path(@lyric), class: 'btn btn-outline-dark' %>
-  <%= link_to '削除', @lyric, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-outline-danger' %>
-  <%= link_to '戻る', lyrics_path, class: "btn btn-outline-info" %>
+  <%= link_to '編集', edit_lyric_path(@lyric), class: 'btn mr-3 btn-sm btn-outline-dark' %>
+  <%= link_to '削除', @lyric, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-sm mr-3 btn-outline-danger' %>
+  <%= link_to '戻る', lyrics_path, class: "btn btn-sm btn-outline-info" %>
  </div>
 <% else %>
   <div class="text-right">

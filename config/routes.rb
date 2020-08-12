@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root to: 'toppages#index'
   
-  resources :lyrics
+  resources :lyrics do
+     resources :comments, only: [:create, :destroy]
+  end
+
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

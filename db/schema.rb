@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_180213) do
+ActiveRecord::Schema.define(version: 2020_08_12_000048) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "post"
+    t.bigint "user_id"
+    t.bigint "lyric_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lyric_id"], name: "index_comments_on_lyric_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "lyrics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -30,5 +40,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_180213) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "lyrics"
+  add_foreign_key "comments", "users"
   add_foreign_key "lyrics", "users"
 end

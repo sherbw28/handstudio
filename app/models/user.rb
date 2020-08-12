@@ -6,5 +6,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   
-  has_many :lyrics
+  has_many :lyrics, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  
 end
