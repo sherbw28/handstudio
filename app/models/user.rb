@@ -8,5 +8,6 @@ class User < ApplicationRecord
   
   has_many :lyrics, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :this, through: :comments, source: :lyric, dependent: :destroy
   
 end
