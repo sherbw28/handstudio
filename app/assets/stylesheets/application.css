@@ -79,3 +79,13 @@ nav img {
     background-color: rgba(0,0,0,.30);
     border-color: rgba(0,0,0,.30);
 }
+
+/*lyrics/show*/
+.long-sentence {
+  word-wrap: break-word;
+  overflow-wrap:break-word;
+}
+
+table {
+table-layout: fixed;
+}

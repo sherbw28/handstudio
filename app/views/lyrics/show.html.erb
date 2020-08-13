@@ -1,13 +1,13 @@
 <div class="container text-center">
   <h2 class="text-right madeby h4">製作者<span><%= link_to @lyric.user.name, user_path(@lyric.user), class: "ml-3" %></span></h2>
   <h1 class="mb-3">Title</h1>
-  <h2 class="mb-5"><%= @lyric.title %></h2>
+  <h2 class="mb-5 long-sentence"><%= @lyric.title %></h2>
   <div class="dropdown-divider"></div>
   <h1 class="mb-3">Lyric</h1>
-  <p class="mb-5 h6"><%= raw(nl2br(@lyric.content)) %></p>
+  <p class="mb-5 h6 long-sentence"><%= raw(nl2br(@lyric.content)) %></p>
   <div class="dropdown-divider"></div>
   <h1 class="mb-3">Meaning</h1>
-  <p class="mb-5 h6"><%= raw(nl2br(@lyric.meaning)) %></p>
+  <p class="mb-5 h6 long-sentence"><%= raw(nl2br(@lyric.meaning)) %></p>
   <div class="dropdown-divider"></div>
   
   <% if logged_in? %>
@@ -32,7 +32,7 @@
         <% @comments.each do |comment| %>
           <tr>
             <td>id:&nbsp;&nbsp;&nbsp;<%= comment.id %></td>
-            <td><%= raw(nl2br(comment.post)) %></td>
+            <td class="long-sentence"><%= raw(nl2br(comment.post))%></td>
             <td>
               <% if current_user == comment.user %>
                 <%=link_to "削除", lyric_comment_path(comment.lyric.id, comment.id), method: :delete %>
