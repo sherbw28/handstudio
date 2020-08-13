@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :this, through: :comments, source: :lyric, dependent: :destroy
   
+  mount_uploader :img, ImgUploader
+  
 end

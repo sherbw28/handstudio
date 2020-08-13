@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @user, multipart: true, local: true) do |f| %>
+    
+      <div class="form-group">
+        <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.file_field :img, class: "form-control floating-label", placeholder: "画像" %>
+      </div>
+      
+      <%= f.check_box :remove_img, label: 'Remove Img'%><label for="user_remove_img">画像を削除する</label>
+      
+      <%= f.submit "Update!", class: "btn btn-outline-info btn-block mb-3" %>
+    
+    <% end %>
+    <%= link_to "Back", user_path(@user) %>
+  </div>
+</div>

@@ -2,12 +2,22 @@
   <aside class="col-sm-4 mb-5">
     <div class="card">
       <div class="card-header">
-         <h3 class="card-title"><%= @user.name %></h3>
+         <h3 class="card-title text-center"><%= @user.name %></h3>
       </div>
-      <div class="card-body">
-        <img class="rounded-circle img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+      <!--<div class="card-body">-->
+      <!--  <img class="rounded-circle img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">-->
+      <!--</div>-->
+      <div class="card-body user-image">
+        <% if @user.img.url %>
+          <img class="img-fluid w-25" src="<%= @user.img.url %>">
+        <% else %>
+          <img class="img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+        <% end %>
       </div>
     </div>
+    <h4 class="text-center mt-3">
+      <%= link_to "Update your info!", edit_user_path(@user), class: "mb-4 btn-outline-info btn btn-block" %>
+    </h4>
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs mb-3 nav-justified">

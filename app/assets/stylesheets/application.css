@@ -83,9 +83,37 @@ nav img {
 /*lyrics/show*/
 .long-sentence {
   word-wrap: break-word;
-  overflow-wrap:break-word;
+  overflow-wrap: break-word;
 }
 
 table {
 table-layout: fixed;
+}
+
+.comment-content {
+  text-align: center;
+  width: 64%;
+  word-wrap: break-word;
+  overflow-wrap:break-word;
+  padding: 2%;
+  border: solid 0.5px rgba(0,0,0,.15);
+}
+
+.comment-id {
+  width: 13%;
+  margin-right: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-delete {
+  width:17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-image {
+  text-align: center;
 }
