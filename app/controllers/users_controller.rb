@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:info] = 'ユーザを登録しました。'
+      session[:user_id] = @user.id
       redirect_to @user
     else
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
@@ -38,6 +39,13 @@ class UsersController < ApplicationController
       flash[:danger] = "更新に失敗しました"
       render :edit
     end
+  end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "ありがとうございました"
+    redirect_to root_path
   end
   
   private

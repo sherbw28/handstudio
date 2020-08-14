@@ -20,5 +20,6 @@
     
     <% end %>
     <%= link_to "Back", user_path(@user) %>
+    <%= link_to "退会する", @user, method: :delete, data: { confirm: "本当に退会してよろしいですか？(作品も全て無くなります)" }, class: "ml-3" %>
   </div>
 </div>
