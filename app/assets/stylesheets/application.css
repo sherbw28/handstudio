@@ -117,3 +117,7 @@ table-layout: fixed;
 .user-image {
   text-align: center;
 }
+
+.music {
+  height: 100px;
+}
